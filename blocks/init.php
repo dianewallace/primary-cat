@@ -79,15 +79,20 @@ function primary_cat_block_init() {
 }
 
 function render_primary_cat_block( $attributes ) {
+
 	$heading = $attributes['heading'];
-	$args    = array(
-		'numberposts' => 10,
-		'include'     => $attributes['post_ids']
-	);
+	$posts = get_posts( array(
+		'include' => $attributes['post_ids']
+	) );
+	$content = '';
 
-	$posts = get_posts( $args );
+	if ( $posts ) {
+		foreach ( $posts as $post ) {
+			$content .= '<h2><a href="' . esc_url( get_permalink( $post->ID ) ) . '">' . esc_html( $post->post_title ) . '</h2>';
+			$content .= '<div>' . esc_html( $post->post_excerpt ) . '</div>';
+		}
+		wp_reset_postdata();
+	}
 
-	print_r($attributes['post_ids']);
-
-	return '<div><h1>' . $heading . '</h1><div>' . $posts . '</div></div>';
+	return '<div><h1>' . $heading . '</h1><div>' . $content . '</div></div>';
 }

@@ -85,22 +85,18 @@ import MetaDropdown from '../components/MetaDropdown';
 				attributes : {
 					heading,
 					post_ids,
-					post_id,
 					options = [],
 				}
 			} = props;
+			
+			console.log(post_ids);
 			
 			const updateHeading = newValue => {
 				props.setAttributes( { heading : newValue } );
 			};
 			
 			const updatePostIds = newValue => {
-				let posts = newValue.toString();
-				props.setAttributes( { post_ids: posts } );
-			};
-			
-			let urlQueryArgs = {
-				post_id: getCurrentPostId(),
+				props.setAttributes( { post_ids: newValue } );
 			};
 			
 			return (
@@ -117,9 +113,9 @@ import MetaDropdown from '../components/MetaDropdown';
 							onChange={ updateHeading }
 						/>
 						<MetaDropdown
-							multiple
+							multiple={ true }
 							label={ __( 'Select Posts:' ) }
-							value={ selectedPosts }
+							value={ post_ids }
 							onChange={ updatePostIds }
 							options={ options }
 						/>

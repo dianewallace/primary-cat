@@ -72,7 +72,7 @@ const applyWithSelect = withSelect( ( select ) => {
 	const selected = primary_category.meta;
 	const { getEntityRecords } = select( 'core' );
 	// let query = { include: selected, per_page: 10, orderby: 'title', order: 'asc', status: ['publish', 'future'] };
-	let query = { per_page: 10, orderby: 'title', order: 'asc', status: ['publish', 'future'] };
+	let query = { per_page: 10, orderby: 'title', order: 'asc', status: ['publish'] };
 
 	return {
 		posts : getEntityRecords( 'postType', 'post', query ),
