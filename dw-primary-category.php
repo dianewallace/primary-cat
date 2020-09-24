@@ -18,6 +18,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
+ * Enqueue Scripts.
+ */
+require_once plugin_dir_path( __FILE__ ) . 'enqueue-scripts.php';
+
+/**
  * Block Initializer.
  */
 require_once plugin_dir_path( __FILE__ ) . 'blocks/init.php';

@@ -29,14 +29,6 @@ function primary_cat_assets() {
 		),
 		filemtime( "$dir/$index_js" )
 	);
-	// Pass data to the script
-	wp_localize_script(
-		'primary-cat-block',
-		'primary_category',
-		array(
-			'meta' => get_post_meta( $post->ID, '_dw_primary_category', true )
-		)
-	);
 }
 
 add_action( 'init', 'primary_cat_block_init' );
