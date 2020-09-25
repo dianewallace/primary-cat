@@ -17,13 +17,12 @@ add_action( 'admin_enqueue_scripts', 'primary_cat_assets' );
  * @since 1.0.0
  */
 function primary_cat_assets() {
-	global $post;
-	$dir = dirname( __FILE__ );
-
+	$dir      = dirname( __FILE__ );
 	$index_js = 'block.build.js';
+
 	wp_enqueue_script(
 		'primary-cat-block',
-		plugins_url( $index_js, __FILE__ ),
+		PRIMARY_CAT_URL . 'blocks/block.build.js',
 		array(
 			'wp-blocks',
 			'wp-i18n',

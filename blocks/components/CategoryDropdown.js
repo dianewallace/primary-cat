@@ -70,7 +70,7 @@ const applyWithSelect = withSelect( ( select ) => {
 	const { getEntityRecords } = select( 'core' );
 
 	return {
-		categories : getEntityRecords('taxonomy', 'category'),
+		categories : getEntityRecords('taxonomy', 'category', { per_page: -1 } ),
 	}
 } )
 

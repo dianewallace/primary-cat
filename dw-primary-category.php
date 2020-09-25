@@ -17,22 +17,25 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+define( 'PRIMARY_CAT_URL', plugin_dir_url( __FILE__ ) );
+define( 'PRIMARY_CAT_DIR', plugin_dir_path( __FILE__ ) );
+
 /**
  * Enqueue Scripts.
  */
-require_once plugin_dir_path( __FILE__ ) . 'includes/enqueue-scripts.php';
+require_once PRIMARY_CAT_DIR . 'includes/enqueue-scripts.php';
 
 /**
  *
  */
-require_once plugin_dir_path( __FILE__ ) . 'includes/rest-api-meta-fields-support.php';
+require_once PRIMARY_CAT_DIR . 'includes/rest-api-meta-fields-support.php';
 
 /**
  * Block Initializer.
  */
-require_once plugin_dir_path( __FILE__ ) . 'blocks/init.php';
+require_once PRIMARY_CAT_DIR . 'blocks/init.php';
 
 /**
  * Render Blocks.
  */
-require_once plugin_dir_path( __FILE__ ) . 'blocks/views/render-primary-cat-block.php';
+require_once PRIMARY_CAT_DIR . 'blocks/views/render-primary-cat-block.php';

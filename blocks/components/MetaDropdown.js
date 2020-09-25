@@ -70,9 +70,11 @@ class MetaDropdown extends Component {
 const applyWithSelect = withSelect( ( select ) => {
 	
 	const { getEntityRecords } = select( 'core' );
-	let catId  = wp.data.select( "core/block-editor" ).getBlockAttributes.cat_id;
-	console.log(catId);
-	let query = { per_page: 10, orderby: 'title', order: 'asc', status: ['publish'], meta_key: '_dw_primary_category', meta_value: catId };
+	
+	let clientId = wp.data.select( 'core/block-editor' ).getSelectedBlockClientId()
+	let catId  = wp.data.select( 'core/block-editor' ).getBlockAttributes( clientId ).cat_id;
+	
+	let query = { per_page: -1, orderby: 'title', order: 'asc', status: ['publish'], meta_key: '_dw_primary_category', meta_value: catId };
 
 	return {
 		posts : getEntityRecords( 'postType', 'post', query ),
