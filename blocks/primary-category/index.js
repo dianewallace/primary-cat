@@ -1,4 +1,5 @@
 import MetaDropdown from '../components/MetaDropdown';
+import CategoryDropdown from '../components/CategoryDropdown';
 
 (function ( wp ) {
 	/**
@@ -85,11 +86,10 @@ import MetaDropdown from '../components/MetaDropdown';
 				attributes : {
 					heading,
 					post_ids,
+					cat_id,
 					options = [],
 				}
 			} = props;
-			
-			console.log(post_ids);
 			
 			const updateHeading = newValue => {
 				props.setAttributes( { heading : newValue } );
@@ -97,6 +97,10 @@ import MetaDropdown from '../components/MetaDropdown';
 			
 			const updatePostIds = newValue => {
 				props.setAttributes( { post_ids: newValue } );
+			};
+			
+			const updateCatId = newValue => {
+				props.setAttributes( { cat_id: newValue } );
 			};
 			
 			return (
@@ -111,6 +115,12 @@ import MetaDropdown from '../components/MetaDropdown';
 							label='Block Title'
 							value={ props.attributes.heading }
 							onChange={ updateHeading }
+						/>
+						<CategoryDropdown
+							label={__( 'Filter Posts by Primary Category:', 'primary-cat' )}
+							value={ cat_id }
+							options={ options }
+							onChange={ updateCatId }
 						/>
 						<MetaDropdown
 							multiple={ true }

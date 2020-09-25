@@ -1,7 +1,14 @@
 <?php
-declare(strict_types=1);
+/**
+ * Enqueue Scripts.
+ *
+ * @package primary-cat
+ */
 
-defined( 'ABSPATH' ) or exit();
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 add_action( 'enqueue_block_editor_assets', 'primary_cat_settings_script_enqueue' );
 /**

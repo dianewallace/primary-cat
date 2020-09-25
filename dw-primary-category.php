@@ -20,9 +20,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Enqueue Scripts.
  */
-require_once plugin_dir_path( __FILE__ ) . 'enqueue-scripts.php';
+require_once plugin_dir_path( __FILE__ ) . 'includes/enqueue-scripts.php';
+
+/**
+ *
+ */
+require_once plugin_dir_path( __FILE__ ) . 'includes/rest-api-meta-fields-support.php';
 
 /**
  * Block Initializer.
  */
 require_once plugin_dir_path( __FILE__ ) . 'blocks/init.php';
+
+/**
+ * Render Blocks.
+ */
+require_once plugin_dir_path( __FILE__ ) . 'blocks/views/render-primary-cat-block.php';

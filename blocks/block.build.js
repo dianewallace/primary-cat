@@ -1,1 +1,137 @@
-!function(t){var e={};function r(n){if(e[n])return e[n].exports;var o=e[n]={i:n,l:!1,exports:{}};return t[n].call(o.exports,o,o.exports,r),o.l=!0,o.exports}r.m=t,r.c=e,r.d=function(t,e,n){r.o(t,e)||Object.defineProperty(t,e,{enumerable:!0,get:n})},r.r=function(t){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0})},r.t=function(t,e){if(1&e&&(t=r(t)),8&e)return t;if(4&e&&"object"==typeof t&&t&&t.__esModule)return t;var n=Object.create(null);if(r.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:t}),2&e&&"string"!=typeof t)for(var o in t)r.d(n,o,function(e){return t[e]}.bind(null,o));return n},r.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return r.d(e,"a",e),e},r.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},r.p="",r(r.s=0)}([function(t,e,r){"use strict";function n(t){return(n="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t})(t)}function o(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}function i(t,e){for(var r=0;r<e.length;r++){var n=e[r];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(t,n.key,n)}}function u(t,e){return(u=Object.setPrototypeOf||function(t,e){return t.__proto__=e,t})(t,e)}function c(t){var e=function(){if("undefined"==typeof Reflect||!Reflect.construct)return!1;if(Reflect.construct.sham)return!1;if("function"==typeof Proxy)return!0;try{return Date.prototype.toString.call(Reflect.construct(Date,[],(function(){}))),!0}catch(t){return!1}}();return function(){var r,n=a(t);if(e){var o=a(this).constructor;r=Reflect.construct(n,arguments,o)}else r=n.apply(this,arguments);return l(this,r)}}function l(t,e){return!e||"object"!==n(e)&&"function"!=typeof e?function(t){if(void 0===t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return t}(t):e}function a(t){return(a=Object.setPrototypeOf?Object.getPrototypeOf:function(t){return t.__proto__||Object.getPrototypeOf(t)})(t)}r.r(e);var s=wp.element.Component,p=wp.components,f=(p.BaseControl,p.SelectControl),y=wp.data,b=y.withSelect,m=(y.withDispatch,wp.compose.compose),d=wp.i18n.__,g=function(t){!function(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function");t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,writable:!0,configurable:!0}}),e&&u(t,e)}(a,t);var e,r,n,l=c(a);function a(){return o(this,a),l.apply(this,arguments)}return e=a,(r=[{key:"render",value:function(){var t=this.props,e=t.label,r=t.multiple,n=void 0!==r&&r,o=t.value,i=t.onChange,u=t.posts;if(!u)return d("Loading posts...","primary-cat");if(0===u.length)return d("No Posts to Select","primary-cat");u[0];var c=[],l={value:"",label:d("Choose posts for this block","primary-cat")};c.push(l);for(var a=0;a<u.length;a++)l={value:u[a].id,label:u[a].title.raw},c.push(l);return wp.element.createElement(f,{multiple:n,label:e,value:o,onChange:i,options:c})}}])&&i(e.prototype,r),n&&i(e,n),a}(s),h=m([b((function(t){primary_category.meta;return{posts:(0,t("core").getEntityRecords)("postType","post",{per_page:10,orderby:"title",order:"asc",status:["publish"]})}}))])(g);!function(t){var e=t.blocks.registerBlockType,r=t.serverSideRender,n=t.components,o=n.TextControl,i=(n.SelectControl,t.blockEditor.InspectorControls),u=t.element.Fragment,c=t.i18n.__,l=t.data.select("core/editor");l.getCurrentPost,l.getCurrentPostId,l.getCurrentPostType;e("primary-cat/get-primary-cat",{title:c("Posts by Primary Category","primary-cat"),icon:"category",category:"common",edit:function(e){var n=e.attributes,l=(n.heading,n.post_ids),a=n.options,s=void 0===a?[]:a;console.log(l);return t.element.createElement(u,null,t.element.createElement(r,{block:"primary-cat/get-primary-cat",attributes:e.attributes}),t.element.createElement(i,null,t.element.createElement(o,{label:"Block Title",value:e.attributes.heading,onChange:function(t){e.setAttributes({heading:t})}}),t.element.createElement(h,{multiple:!0,label:c("Select Posts:"),value:l,onChange:function(t){e.setAttributes({post_ids:t})},options:s})))},save:function(){return null}})}(window.wp)}]);
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./blocks/block.js");
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./blocks/block.js":
+/*!*************************!*\
+  !*** ./blocks/block.js ***!
+  \*************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _primary_category_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./primary-category/index.js */ \"./blocks/primary-category/index.js\");\n/**\n * Gutenberg Blocks\n *\n * All blocks related JavaScript files should be imported here.\n * You can create a new block folder in this dir and include code\n * for that block here as well.\n *\n * All blocks should be included here since this is the file that\n * Webpack is compiling as the input file.\n */\n\n\n//# sourceURL=webpack:///./blocks/block.js?");
+
+/***/ }),
+
+/***/ "./blocks/components/CategoryDropdown.js":
+/*!***********************************************!*\
+  !*** ./blocks/components/CategoryDropdown.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nfunction _typeof(obj) { \"@babel/helpers - typeof\"; if (typeof Symbol === \"function\" && typeof Symbol.iterator === \"symbol\") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === \"function\" && obj.constructor === Symbol && obj !== Symbol.prototype ? \"symbol\" : typeof obj; }; } return _typeof(obj); }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function\"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }\n\nfunction _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }\n\nfunction _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }\n\nfunction _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === \"object\" || typeof call === \"function\")) { return call; } return _assertThisInitialized(self); }\n\nfunction _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return self; }\n\nfunction _isNativeReflectConstruct() { if (typeof Reflect === \"undefined\" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === \"function\") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }\n\nfunction _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }\n\n/**\n * WordPress dependencies.\n */\nvar Component = wp.element.Component;\nvar _wp$components = wp.components,\n    BaseControl = _wp$components.BaseControl,\n    SelectControl = _wp$components.SelectControl;\nvar _wp$data = wp.data,\n    withSelect = _wp$data.withSelect,\n    withDispatch = _wp$data.withDispatch;\nvar compose = wp.compose.compose;\nvar __ = wp.i18n.__;\n/**\n * Custom Component that gets all available Categories.\n */\n\nvar CategoryDropdown = /*#__PURE__*/function (_Component) {\n  _inherits(CategoryDropdown, _Component);\n\n  var _super = _createSuper(CategoryDropdown);\n\n  function CategoryDropdown() {\n    _classCallCheck(this, CategoryDropdown);\n\n    return _super.apply(this, arguments);\n  }\n\n  _createClass(CategoryDropdown, [{\n    key: \"render\",\n    value: function render() {\n      var _this$props = this.props,\n          label = _this$props.label,\n          value = _this$props.value,\n          onChange = _this$props.onChange,\n          categories = _this$props.categories; // categories are retrieved from database using withSelect below.\n\n      if (!categories) {\n        return __('Loading categories...', 'primary-cat');\n      }\n\n      if (categories.length === 0) {\n        return __('No categories to Select', 'primary-cat');\n      }\n\n      var category = categories[0];\n      var options = [];\n      var option = {\n        value: '',\n        label: __('Choose a Category', 'primary-cat')\n      };\n      options.push(option);\n\n      for (var i = 0; i < categories.length; i++) {\n        option = {\n          value: categories[i].id,\n          label: categories[i].name\n        };\n        options.push(option);\n      }\n\n      return wp.element.createElement(SelectControl, {\n        label: label,\n        value: value,\n        onChange: onChange,\n        options: options\n      });\n    }\n  }]);\n\n  return CategoryDropdown;\n}(Component); // Fetch the categories.\n\n\nvar applyWithSelect = withSelect(function (select) {\n  var _select = select('core'),\n      getEntityRecords = _select.getEntityRecords;\n\n  return {\n    categories: getEntityRecords('taxonomy', 'category')\n  };\n}); // Combine the higher-order components.\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (compose([applyWithSelect])(CategoryDropdown));\n\n//# sourceURL=webpack:///./blocks/components/CategoryDropdown.js?");
+
+/***/ }),
+
+/***/ "./blocks/components/MetaDropdown.js":
+/*!*******************************************!*\
+  !*** ./blocks/components/MetaDropdown.js ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nfunction _typeof(obj) { \"@babel/helpers - typeof\"; if (typeof Symbol === \"function\" && typeof Symbol.iterator === \"symbol\") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === \"function\" && obj.constructor === Symbol && obj !== Symbol.prototype ? \"symbol\" : typeof obj; }; } return _typeof(obj); }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function\"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }\n\nfunction _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }\n\nfunction _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }\n\nfunction _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === \"object\" || typeof call === \"function\")) { return call; } return _assertThisInitialized(self); }\n\nfunction _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return self; }\n\nfunction _isNativeReflectConstruct() { if (typeof Reflect === \"undefined\" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === \"function\") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }\n\nfunction _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }\n\n/**\n * WordPress dependencies.\n */\nvar Component = wp.element.Component;\nvar _wp$components = wp.components,\n    BaseControl = _wp$components.BaseControl,\n    SelectControl = _wp$components.SelectControl;\nvar _wp$data = wp.data,\n    withSelect = _wp$data.withSelect,\n    withDispatch = _wp$data.withDispatch;\nvar compose = wp.compose.compose;\nvar __ = wp.i18n.__;\n/**\n * Custom Component that gets post ids from meta and passes that to a post query.\n */\n\nvar MetaDropdown = /*#__PURE__*/function (_Component) {\n  _inherits(MetaDropdown, _Component);\n\n  var _super = _createSuper(MetaDropdown);\n\n  function MetaDropdown() {\n    _classCallCheck(this, MetaDropdown);\n\n    return _super.apply(this, arguments);\n  }\n\n  _createClass(MetaDropdown, [{\n    key: \"render\",\n    value: function render() {\n      var _this$props = this.props,\n          label = _this$props.label,\n          _this$props$multiple = _this$props.multiple,\n          multiple = _this$props$multiple === void 0 ? false : _this$props$multiple,\n          value = _this$props.value,\n          onChange = _this$props.onChange,\n          posts = _this$props.posts; // Posts are retrieved from database using withSelect below.\n\n      if (!posts) {\n        return __('Loading posts...', 'primary-cat');\n      }\n\n      if (posts.length === 0) {\n        return __('No Posts to Select', 'primary-cat');\n      }\n\n      var post = posts[0];\n      var options = [];\n      var option = {\n        value: '',\n        label: __('Choose posts for this block', 'primary-cat')\n      };\n      options.push(option);\n\n      for (var i = 0; i < posts.length; i++) {\n        option = {\n          value: posts[i].id,\n          label: posts[i].title.raw\n        };\n        options.push(option);\n      }\n\n      return wp.element.createElement(SelectControl, {\n        multiple: multiple,\n        label: label,\n        value: value,\n        onChange: onChange,\n        options: options\n      });\n    }\n  }]);\n\n  return MetaDropdown;\n}(Component); // Fetch the posts by ID.\n\n\nvar applyWithSelect = withSelect(function (select) {\n  var _select = select('core'),\n      getEntityRecords = _select.getEntityRecords;\n\n  var catId = wp.data.select(\"core/block-editor\").getBlockAttributes.cat_id;\n  console.log(catId);\n  var query = {\n    per_page: 10,\n    orderby: 'title',\n    order: 'asc',\n    status: ['publish'],\n    meta_key: '_dw_primary_category',\n    meta_value: catId\n  };\n  return {\n    posts: getEntityRecords('postType', 'post', query)\n  };\n}); // Combine the higher-order components.\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (compose([applyWithSelect])(MetaDropdown));\n\n//# sourceURL=webpack:///./blocks/components/MetaDropdown.js?");
+
+/***/ }),
+
+/***/ "./blocks/primary-category/index.js":
+/*!******************************************!*\
+  !*** ./blocks/primary-category/index.js ***!
+  \******************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_MetaDropdown__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/MetaDropdown */ \"./blocks/components/MetaDropdown.js\");\n/* harmony import */ var _components_CategoryDropdown__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/CategoryDropdown */ \"./blocks/components/CategoryDropdown.js\");\n\n\n\n(function (wp) {\n  /**\n   * Registers a new block provided a unique name and an object defining its behavior.\n   * @see https://github.com/WordPress/gutenberg/tree/master/blocks#api\n   */\n  var registerBlockType = wp.blocks.registerBlockType;\n  /**\n   * Component used for server-side rendering a preview of dynamic blocks to display in the editor.\n   * @see https://github.com/WordPress/gutenberg/tree/master/packages/components/src/server-side-render\n   */\n\n  var ServerSideRender = wp.serverSideRender;\n  /**\n   * Components used to generate block controls.\n   * @see https://github.com/WordPress/gutenberg/tree/master/packages/components\n   */\n\n  var _wp$components = wp.components,\n      TextControl = _wp$components.TextControl,\n      SelectControl = _wp$components.SelectControl;\n  /**\n   * Inspector Controls appear in the post settings sidebar when a block is being edited.\n   * @see https://github.com/WordPress/gutenberg/tree/master/packages/editor/src/components/inspector-controls\n   */\n\n  var InspectorControls = wp.blockEditor.InspectorControls;\n  /**\n   * Fragments let you group a list of children without adding extra nodes to the DOM.\n   * @see https://reactjs.org/docs/fragments.html\n   */\n\n  var Fragment = wp.element.Fragment;\n  /**\n   * Retrieves the translation of text.\n   * @see https://github.com/WordPress/gutenberg/tree/master/i18n#api\n   */\n\n  var __ = wp.i18n.__;\n  /**\n   * Retrieves WordPress data.\n   */\n\n  var _wp$data$select = wp.data.select('core/editor'),\n      getCurrentPost = _wp$data$select.getCurrentPost,\n      getCurrentPostId = _wp$data$select.getCurrentPostId,\n      getCurrentPostType = _wp$data$select.getCurrentPostType;\n  /**\n   * Every block starts by registering InspectorControls new block type definition.\n   * @see https://wordpress.org/gutenberg/handbook/block-api/\n   */\n\n\n  registerBlockType('primary-cat/get-primary-cat', {\n    /**\n     * This is the display title for your block, which can be translated with `i18n` functions.\n     * The block inserter will show this name.\n     */\n    title: __('Posts by Primary Category', 'primary-cat'),\n\n    /**\n     * An icon property should be specified to make it easier to identify a block.\n     * These can be any of WordPress’ Dashicons, or a custom svg element.\n     */\n    icon: 'category',\n\n    /**\n     * Blocks are grouped into categories to help users browse and discover them.\n     * The categories provided by core are `common`, `embed`, `formatting`, `layout` and `widgets`.\n     */\n    category: 'common',\n\n    /**\n     * The edit function describes the structure of your block in the context of the editor.\n     * This represents what the editor will render when the block is used.\n     * @see https://wordpress.org/gutenberg/handbook/block-edit-save/#edit\n     *\n     * @param {Object} [props] Properties passed from the editor.\n     * @return {Element}       Element to render.\n     */\n    edit: function edit(props) {\n      var _props$attributes = props.attributes,\n          heading = _props$attributes.heading,\n          post_ids = _props$attributes.post_ids,\n          cat_id = _props$attributes.cat_id,\n          _props$attributes$opt = _props$attributes.options,\n          options = _props$attributes$opt === void 0 ? [] : _props$attributes$opt;\n\n      var updateHeading = function updateHeading(newValue) {\n        props.setAttributes({\n          heading: newValue\n        });\n      };\n\n      var updatePostIds = function updatePostIds(newValue) {\n        props.setAttributes({\n          post_ids: newValue\n        });\n      };\n\n      var updateCatId = function updateCatId(newValue) {\n        props.setAttributes({\n          cat_id: newValue\n        });\n      };\n\n      return wp.element.createElement(Fragment, null, wp.element.createElement(ServerSideRender, {\n        block: \"primary-cat/get-primary-cat\" // urlQueryArgs={ urlQueryArgs }\n        ,\n        attributes: props.attributes\n      }), wp.element.createElement(InspectorControls, null, wp.element.createElement(TextControl, {\n        label: \"Block Title\",\n        value: props.attributes.heading,\n        onChange: updateHeading\n      }), wp.element.createElement(_components_CategoryDropdown__WEBPACK_IMPORTED_MODULE_1__[\"default\"], {\n        label: __('Filter Posts by Primary Category:', 'primary-cat'),\n        value: cat_id,\n        options: options,\n        onChange: updateCatId\n      }), wp.element.createElement(_components_MetaDropdown__WEBPACK_IMPORTED_MODULE_0__[\"default\"], {\n        multiple: true,\n        label: __('Select Posts:'),\n        value: post_ids,\n        onChange: updatePostIds,\n        options: options\n      })));\n    },\n\n    /**\n     * The save function defines the way in which the different attributes should be combined\n     * into the final markup, which is then serialized by Gutenberg into `post_content`.\n     * @see https://wordpress.org/gutenberg/handbook/block-edit-save/#save\n     *\n     * @return {Element} Element to render.\n     */\n    save: function save() {\n      // return null for ServerSideRender.\n      return null;\n    }\n  });\n})(window.wp);\n\n//# sourceURL=webpack:///./blocks/primary-category/index.js?");
+
+/***/ })
+
+/******/ });

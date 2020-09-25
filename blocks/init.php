@@ -6,6 +6,10 @@
  * @package primary-cat
  */
 
+declare(strict_types=1);
+
+defined( 'ABSPATH' ) or exit();
+
 add_action( 'admin_enqueue_scripts', 'primary_cat_assets' );
 /**
  * Enqueue Gutenberg block assets for backend editor.
@@ -64,27 +68,12 @@ function primary_cat_block_init() {
 				'type'    => 'array',
 				'default' => []
 			),
+			'cat_id' => array(
+				'type'    => 'integer',
+				'default' => 0
+			),
 		),
 		'editor_script'   => 'primary-cat-block',
 		'render_callback' => 'render_primary_cat_block'
 	) );
-}
-
-function render_primary_cat_block( $attributes ) {
-
-	$heading = $attributes['heading'];
-	$posts = get_posts( array(
-		'include' => $attributes['post_ids']
-	) );
-	$content = '';
-
-	if ( $posts ) {
-		foreach ( $posts as $post ) {
-			$content .= '<h2><a href="' . esc_url( get_permalink( $post->ID ) ) . '">' . esc_html( $post->post_title ) . '</h2>';
-			$content .= '<div>' . esc_html( $post->post_excerpt ) . '</div>';
-		}
-		wp_reset_postdata();
-	}
-
-	return '<div><h1>' . $heading . '</h1><div>' . $content . '</div></div>';
 }

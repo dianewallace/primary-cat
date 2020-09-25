@@ -45,7 +45,7 @@ class CategoryDropdown extends Component {
 		let category = categories[ 0 ];
 
 		let options = [];
-		let option = { value: '', label: __( 'Choose a primary category for this post', 'primary-cat' ) };
+		let option = { value: '', label: __( 'Choose a Category', 'primary-cat' ) };
 		options.push( option );
 
 		for ( let i = 0; i < categories.length; i++ ) {

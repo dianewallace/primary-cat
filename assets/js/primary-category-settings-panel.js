@@ -41,12 +41,10 @@ import CategoryDropdown from '../../blocks/components/CategoryDropdown';
 				meta : {
 					_dw_primary_category : primary_category,
 				} = {},
-				catId,
+				cat_id,
 				updateMeta,
-				options = [],
+				selected_categories = [],
 			} = this.props;
-			
-			console.log( primary_category );
 			
 			return (
 				<Fragment>
@@ -58,8 +56,8 @@ import CategoryDropdown from '../../blocks/components/CategoryDropdown';
 						
 						<CategoryDropdown
 							label={__( 'Select Primary Category:', 'primary-cat' )}
-							value={primary_category}
-							options={options}
+							value={ primary_category }
+							options={ selected_categories }
 							onChange={( value ) => {
 								updateMeta( { _dw_primary_category : value || '' } );
 							}}
@@ -76,10 +74,12 @@ import CategoryDropdown from '../../blocks/components/CategoryDropdown';
 		
 		const { getEntityRecord } = select( 'core' );
 		const { getEditedPostAttribute } = select( 'core/editor' );
+		const { getCurrentPostAttribute } = select( 'core/editor' );
 		
 		return {
 			meta : getEditedPostAttribute( 'meta' ),
-			catId : getEntityRecord( 'postType', 'post', getEditedPostAttribute( 'meta' )._dw_primary_category ),
+			cat_id : getEntityRecord( 'postType', 'post', getEditedPostAttribute( 'meta' )._dw_primary_category ),
+			selected_categories: getCurrentPostAttribute('categories')
 		};
 	} );
 	
