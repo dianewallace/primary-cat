@@ -1,6 +1,10 @@
 # Primary Category
 
+This is very much a work in progress! Specifically the filter posts by meta key isn't working yet.
+
 A WordPress plugin that allows publishers to designate a primary category for posts.
+
+This plugin adds a gutenberg settings panel to select a primary category and a block to display posts by their primary category.
 
 ## Installation
 ### Upload
